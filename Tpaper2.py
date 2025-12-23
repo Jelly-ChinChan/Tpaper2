@@ -87,7 +87,7 @@ def dark_light_ratio_from_crop(crop_rgb: Image.Image, strip_white_thr: int = 245
 # Streamlit App
 # =========================
 st.set_page_config(page_title="試紙暗/淺比例分析（手動裁切）", layout="centered")
-st.title("🧪試紙反應後局部褪色比例分析模型")
+st.title("試紙反應後局部褪色比例分析模型")
 st.write("上傳圖片 → 用滑鼠拖曳裁切框只框住試紙 → 自動以 Otsu 閾值分成暗/淺 → 計算比例並視覺化。")
 
 uploaded_file = st.file_uploader("請選擇一張圖片...", type=["jpg", "jpeg", "png", "bmp"])
@@ -174,6 +174,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
