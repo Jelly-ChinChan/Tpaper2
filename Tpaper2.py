@@ -90,14 +90,11 @@ st.set_page_config(page_title="試紙暗/淺比例分析（手動裁切）", lay
 st.title("🧪 試紙暗色/淺色比例分析（手動拖曳裁切）")
 st.write("上傳圖片 → 用滑鼠拖曳裁切框只框住試紙 → 自動以 Otsu 閾值分成暗/淺 → 計算比例並視覺化。")
 
-with st.expander("✅ 第一次使用請先安裝（本機/伺服器終端機）", expanded=False):
-    st.code("pip install streamlit-cropper", language="bash")
-
 uploaded_file = st.file_uploader("請選擇一張圖片...", type=["jpg", "jpeg", "png", "bmp"])
 if uploaded_file:
     img = Image.open(uploaded_file).convert("RGB")
 
-    st.subheader("1) 手動拖曳裁切框（像 LINE）")
+    st.subheader("1) 手動拖曳裁切框")
     st.caption("拖動四邊/角落調整範圍，讓框盡量只包含試紙本體（越乾淨越準）。")
 
     colA, colB, colC = st.columns([1, 1, 1])
@@ -170,3 +167,4 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
