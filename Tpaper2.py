@@ -127,7 +127,7 @@ if uploaded_file:
         return_type="image",
       )
 
-    st.image(cropped_img, caption="裁切後（分析範圍）", width=100)
+    st.image(cropped_img, caption="裁切後（分析範圍）", width=200)
 
     st.subheader("2) 分割設定")
     strip_white_thr = st.slider(
@@ -164,7 +164,7 @@ if uploaded_file:
     overlay[res["light"]] = (1 - alpha) * overlay[res["light"]] + alpha * np.array([0, 255, 255])   # light
     overlay = overlay.clip(0, 255).astype(np.uint8)
 
-    st.image(Image.fromarray(overlay), caption="分割疊圖：暗=紅、淺=青", width=100)
+    st.image(Image.fromarray(overlay), caption="分割疊圖：暗=紅、淺=青", width=200)
 
     st.subheader("4) 數值摘要")
     st.write(
@@ -174,6 +174,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
