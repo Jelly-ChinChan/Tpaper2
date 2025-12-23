@@ -116,7 +116,7 @@ if uploaded_file:
 
     # 建立「顯示用」縮小影像（不影響原圖）
     display_img = img.copy()
-    display_img.thumbnail((600, 600))  # 👈 控制正在裁切圖的最大長寬（可調）
+    display_img.thumbnail((500, 500))  # 👈 控制正在裁切圖的最大長寬（可調）
 
     with col_crop:
       cropped_img = st_cropper(
@@ -174,6 +174,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
