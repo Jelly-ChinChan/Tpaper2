@@ -112,13 +112,16 @@ if uploaded_file:
         aspect_ratio = (3, 1)
 
     # Cropper returns a PIL image of the selected region
-cropped_img = st_cropper(
-    img,
-    realtime_update=realtime_update,
-    box_color=box_color,
-    aspect_ratio=aspect_ratio,
-    return_type="image",
-)
+    col_crop, _ = st.columns([2, 3])  # 左邊較窄，右邊留白
+
+    with col_crop:
+      cropped_img = st_cropper(
+        img,
+        realtime_update=realtime_update,
+        box_color=box_color,
+        aspect_ratio=aspect_ratio,
+        return_type="image",
+      )
 
     st.image(cropped_img, caption="裁切後（分析範圍）", width=100)
 
@@ -167,6 +170,7 @@ cropped_img = st_cropper(
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
