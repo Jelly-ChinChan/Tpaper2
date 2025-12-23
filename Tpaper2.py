@@ -107,7 +107,7 @@ if uploaded_file:
 
     aspect_ratio = None
     if aspect == "長條(1:3)":
-        aspect_ratio = (1, 33
+        aspect_ratio = (1, 3)
     elif aspect == "長條(3:1)":
         aspect_ratio = (3, 1)
 
@@ -167,6 +167,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
