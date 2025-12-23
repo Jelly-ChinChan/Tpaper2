@@ -108,7 +108,7 @@ if uploaded_file:
     aspect_ratio = None
     if aspect == "直立(1:4)":
         aspect_ratio = (1, 4)
-    elif aspect == "橫放(5:1:":
+    elif aspect == "橫放(5:1)":
         aspect_ratio = (5, 1)
 
     # Cropper returns a PIL image of the selected region
@@ -174,6 +174,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
