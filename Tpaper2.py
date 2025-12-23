@@ -114,9 +114,13 @@ if uploaded_file:
     # Cropper returns a PIL image of the selected region
     col_crop, _ = st.columns([2, 2])  # 左邊較窄，右邊留白
 
+    # 建立「顯示用」縮小影像（不影響原圖）
+    display_img = img.copy()
+    display_img.thumbnail((600, 600))  # 👈 控制正在裁切圖的最大長寬（可調）
+
     with col_crop:
       cropped_img = st_cropper(
-        img,
+        display_img,          # 👈 用縮小後的影像來裁切
         realtime_update=realtime_update,
         box_color=box_color,
         aspect_ratio=aspect_ratio,
@@ -170,6 +174,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
