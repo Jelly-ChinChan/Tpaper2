@@ -90,7 +90,7 @@ st.set_page_config(page_title="試紙暗/淺比例分析（手動裁切）", lay
 st.markdown(
     """
     <h1 style="font-size:36px;">試紙反應後之局部褪色比例分析模型</h1>
-    <p style="font-size:18px;">
+    <p style="font-size:17px;">
     上傳圖片 → 用滑鼠拖曳裁切框只框住試紙 → 自動以 Otsu 閾值分成暗/淺 → 計算比例並視覺化。
     </p>
     """,
@@ -181,6 +181,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
