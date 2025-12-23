@@ -89,7 +89,7 @@ def dark_light_ratio_from_crop(crop_rgb: Image.Image, strip_white_thr: int = 245
 st.set_page_config(page_title="試紙暗/淺比例分析（手動裁切）", layout="centered")
 st.markdown(
     """
-    <h1 style="font-size:36px;">本研究試紙反應後之局部褪色比例分析模型</h1>
+    <h1 style="font-size:36px; front-weight:700;">本研究試紙反應後之局部褪色比例分析模型</h1>
     <p style="font-size:17px;">
     上傳圖片 → 用滑鼠拖曳裁切框只框住試紙 → 自動以 Otsu 閾值分成暗/淺 → 計算比例並視覺化。
     </p>
@@ -181,6 +181,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
