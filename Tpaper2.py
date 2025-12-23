@@ -103,13 +103,13 @@ if uploaded_file:
     with colB:
         box_color = st.color_picker("裁切框顏色", "#00FF00")
     with colC:
-        aspect = st.selectbox("裁切框長寬比", ["不限制", "直立(1:4)", "橫放(5:1)"])
+        aspect = st.selectbox("裁切框長寬比", ["不限制", "直立(1:4)", "橫放(6:1)"])
 
     aspect_ratio = None
     if aspect == "直立(1:4)":
         aspect_ratio = (1, 4)
-    elif aspect == "橫放(5:1)":
-        aspect_ratio = (5, 1)
+    elif aspect == "橫放(6:1)":
+        aspect_ratio = (6, 1)
 
     # Cropper returns a PIL image of the selected region
     col_crop, _ = st.columns([2, 2])  # 左邊較窄，右邊留白
@@ -174,6 +174,7 @@ if uploaded_file:
     )
 else:
     st.info("👆 請先上傳圖片開始分析。")
+
 
 
 
